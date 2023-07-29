@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: #d6e0da; */
+  }
+  
+  .maxWidth {
+    max-width: 40rem;
+    margin: auto;
+    /* background: red; */
+  }
+  
+  .profileSection {
+    display: flex;
+    background-color: #065f46;
+    border-radius: 10px;
+    width: 110%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profileImageWrapper {
+    width: 40%;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #48bb78; */
+    border-radius: 9999px;
+    overflow: hidden;
+    border-width: 2px;
+    border-color: #211f1f;
+  }
+  
+  .profileImage {
+    width: 100%;
+    border: 2px solid #000000;
+    border-radius: 100%;
+  }
+  
+  .profileDetails {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .username {
+    font-weight: 900;
+    margin: 0.25rem;
+    font-size: 2rem;
+  }
+  
+  .name {
+    margin: 0.25rem;
+  }
+  
+  .bio {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* background-color: #dcdcdc; */
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .statItem {
+    display: flex;
+    align-items: center;
+  }
+  
+  .statNumber {
+    margin-right: 0.25rem;
+  }
+  
+  .photoSection {
+    max-width: 40rem;
+    margin:1rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    /* background-color: #f56565; */
+    width:90%;
+  }
+  
+  .photoItem {
+    width: fit-content;
+    padding: 0.25rem;
+    /* background-color: #fefcbf; */
+  }
+  
+  .photoImageWrapper {
+    width: fit-content;
+    display: flex;
+  }
+  .photoImageWrapper img{
+    overflow-clip-margin: content-box;
+    overflow: clip;
+  }
+  
+  .photoImage {
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media only screen and (max-width: 425px){
+    .photoImageWrapper {height:180px;}
+  }
+  @media only screen and (max-width: 768px){
+    .photoImageWrapper { height:240px;}
+  }
+  @media only screen and (max-width: 1024px){
+    .photoImageWrapper { height:270px;}
+  }

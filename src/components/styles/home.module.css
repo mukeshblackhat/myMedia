@@ -1,0 +1,56 @@
+
+.flexContainer {
+    display: flex;
+    margin: auto;
+    /* background-color: #bdbd31; */
+  }
+ 
+  .leftColumn {
+    /* background-color: #c6f3d5; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rightColumn {
+    display:flex;
+    border-radius: 5px;
+    flex-direction: column;
+    border: 2px solid #757171;
+    padding: 01rem;
+    /* height: calc(100vh - 5rem); */
+    height:fit-content;
+    margin:1rem;
+  }
+  .suggestedUsers {
+    font-weight: bold;
+    display:flex ;
+    
+  }
+  
+  .userItem {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+  }
+  .userImage {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .userImage img {
+    /* Add the appropriate styles for the user image */
+  }
+  
+  .userName {
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+  
+  .emptyDiv {
+    margin: 0.25rem;
+  }
+  @media only screen and (max-width: 768px){
+    .rightColumn{
+      display:none;
+    }
+  }

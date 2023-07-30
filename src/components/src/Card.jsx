@@ -5,15 +5,8 @@ import styles from '../styles/card.module.css'
 import DownloadLogo from '../assets/download.svg'
 
 const Card=(data)=>{
-  // const router = useRouter();
-  // const handleClick = (username) => {
-  //   router.push(`/a/${username}`); 
-  // }; 
-  console.log(DownloadLogo," donwload image")
- console.log(data.data)
  const reqData=data.data;
- const {user,urls,views,likes,downloads,description
- }=reqData;
+ const {user,urls,views,likes,downloads,description}=reqData;
  const {username,profile_image}=user;
  
     return(

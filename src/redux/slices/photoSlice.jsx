@@ -1,16 +1,47 @@
-import { createSlice } from '@reduxjs/toolkit';
+
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchUserPhotos } from '../../components/api/apiUtils'; // Import your API function here
+
+const initialState = { 
+    photo: [],
+    loading:true,
+    page:1,
+ };
+
+export const fetchUserPhotosAsync = createAsyncThunk(
+  'photo/fetchUserPhotos',
+  async ({ username, page }) => {
+    try {
+      const photos = await fetchUserPhotos(username, page);
+      return photos;
+    } catch (error) {
+        console.log(error, "error in thunk")
+      throw error;
+    }
+  }
+);
 
 const photoSlice = createSlice({
   name: 'photo',
-  initialState: {photo: []},
+  initialState,
   reducers: {
-    addPhotos: (state, action) => {
-        console.log("line 8  photoslice reducer", action.payload, state)
-        state.photo = [...state.photo, ...action.payload]
-  
-    },
+    increasePage: (state) => {
+        state.page+=1;
+      },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUserPhotosAsync.pending, (state) => {
+        state.loading=true;
+      })
+      .addCase(fetchUserPhotosAsync.fulfilled, (state, action) => {
+        state.loading=false;
+        state.photo = [...state.photo, ...action.payload];
+      })
+      .addCase(fetchUserPhotosAsync.rejected, (state, action) => {
+      });
   },
 });
 
-export const { addPhotos } = photoSlice.actions;
+export const { increasePage } = photoSlice.actions;
 export default photoSlice.reducer;

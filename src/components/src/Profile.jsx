@@ -1,19 +1,24 @@
 "use client";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import styles from '../styles/profile.module.css';
 import useScrollToBottom from "../hooks/useScrollToBottom";
 import { fetchUserData, fetchUserPhotos } from '../api/apiUtils';
+import { useDispatch, useSelector } from "react-redux";
+import { increment, decrement } from '../../redux/slices/counterSlice'
+import { addPhotos } from "@/redux/slices/photoSlice";
 
 
 const Profile = ({ params }) => {
   const isBottom=useScrollToBottom();
   const [data, setData] = useState();
   const [pgCount,setPgCount]=useState(1);
-  const [photos, setPhotos] = useState();
+  const [photos, setPhotos] = useState([]);
+  const photo = useSelector((state) => {console.log(state); return state.photo});
   const [loading, setLoading] = useState(true);
   const [errorData,setErrorData]=useState(false);
-
+  const {user}=params;
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,10 +27,13 @@ const Profile = ({ params }) => {
   
         const photoRes = await fetchUserPhotos(user, pgCount);
         setPhotos(photoRes);
-  
+        dispatch(addPhotos(photoRes));
         setPgCount((prevPgCount) => prevPgCount + 1);
         setLoading(false);
+        setErrorData(false)
+
       } catch (error) {
+        console.log(error)
         setErrorData(true)
         setLoading(false);
       }
@@ -33,13 +41,16 @@ const Profile = ({ params }) => {
   
     fetchData();
   }, []);
-  
+
+   useEffect(()=>{console.log(photo)},[photo])
 
     useEffect(() => {
       const fetchDataOnScroll = async () => {
         if (isBottom) {
           try {
             const photoRes = await fetchUserPhotos(user, pgCount);
+            console.log("line 51 photo to reducer", photoRes)
+            dispatch(addPhotos(photoRes));
             setPhotos((prevPhotos) => [...prevPhotos, ...photoRes]);
             setPgCount((prevPgCount) => prevPgCount + 1);
             setLoading(false);
@@ -72,6 +83,11 @@ const Profile = ({ params }) => {
         <div className={styles.navbarText}>MyMedia</div>
         {/* <div className={styles.lightModeText}>light mode</div> */}
       </div>
+      <div>
+      <h1>Counter: {count}</h1> {/* Display the counter state */}
+      <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
+    </div>
       <div className={styles.container}>
         <div className={styles.maxWidth}>
           <div className={styles.profileSection}>
@@ -100,7 +116,7 @@ const Profile = ({ params }) => {
           </div>
           <div className={styles.photoSection}>
             {photos?.map((photo, index) => {
-              console.log(photo);
+              // console.log(photo);
               const imageSizes = [
                 { size: 200, url: photo.urls.thumb },
                 { size: 400, url: photo.urls.small },

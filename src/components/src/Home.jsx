@@ -16,6 +16,7 @@ const Home = () => {
     console.log(userData)
   },[data])
 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,9 +27,10 @@ const Home = () => {
         setLoading(false);
       }
     };
-
     fetchData();
   }, []);
+
+
   useEffect(() => {
     const fetchDataOnScroll = async () => {
       if (isBottom) {
@@ -41,9 +43,9 @@ const Home = () => {
         }
       }
     };
-
     fetchDataOnScroll();
   }, [isBottom]);
+  
 
   return (
     <>

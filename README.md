@@ -1,39 +1,41 @@
-##My-Media
+# My-Media
 
-An application for differenct Feeds and UserProfile , with the feature of infinite scroll , used custome hooks , loader and error handling also .
+An application for different Feeds and UserProfile, with the feature of infinite scroll, used custom hooks, loader, and error handling as well.
 
-##Technologies Used
+## Technologies Used
 
-Next.js
-CSS Modules
-Redux (with asyncThunk)
-Unsplash API
+- Next.js
+- CSS Modules
+- Redux (with asyncThunk)
+- Unsplash API
 
-##Setup and Installation
+## Setup and Installation
 
-For running project in local environment follow the following code .
+To run the project in the local environment, follow the steps below:
+
 ```
-npm init 
-npm run dev 
+-npm i 
+-npm run dev
 ```
 
-##API Usage
- Read only Unsplash Api are used for getting the data .
+## API Usage
 
+Read-only Unsplash API is used for getting the data.
 
-##State Management
-1. Used Redux  for managing the state in the profile page and for calling the api used  asyncThunk for api call management .
-2. In feed page (Home Page) used only simple useState and useEffect for managing the state and api calls .  
+## State Management
 
-##Responsiveness
-My-Media is completely phn responsive and fully functionality .
-##web view :
-![Screenshot from 2023-07-31 23-47-37](https://github.com/mukeshblackhat/myMedia/assets/59144700/4ae9e58f-53cb-4389-a938-b04d6b4dc5dd)
+1. Used Redux to manage the state on the profile page. For calling the API, used asyncThunk for API call management.
+2. In the feed page (Home Page), used simple useState and useEffect for managing the state and API calls.
 
-##tab view : 
-![Screenshot from 2023-07-31 23-47-55](https://github.com/mukeshblackhat/myMedia/assets/59144700/4ef5ca0b-e96d-4a9b-953d-46abb8c9d7db)
+## Responsiveness
 
+My-Media is completely phone responsive and fully functional.
 
-##mobile view:
+### Web View:
+![Screenshot from 2023-07-31 23-47-37](https://github.com/mukeshblackhat/myMedia/assets/59144700/4ae9e58f-53cb-4389-a938-b04d6b4dc5dd.jpg)
 
-![Screenshot from 2023-07-31 23-48-16](https://github.com/mukeshblackhat/myMedia/assets/59144700/7454b0ac-df96-4bfa-ad9e-134330f6c3e4)
+### Tab View:
+![Screenshot from 2023-07-31 23-47-55](https://github.com/mukeshblackhat/myMedia/assets/59144700/4ef5ca0b-e96d-4a9b-953d-46abb8c9d7db.jpg)
+
+### Mobile View:
+![Screenshot from 2023-07-31 23-48-16](https://github.com/mukeshblackhat/myMedia/assets/59144700/7454b0ac-df96-4bfa-ad9e-134330f6c3e4.jpg)

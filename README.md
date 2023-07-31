@@ -1,15 +1,19 @@
 ##My-Media
+
 An application for differenct Feeds and UserProfile , with the feature of infinite scroll , used custome hooks , loader and error handling also .
 
 ##Technologies Used
+
 Next.js
 CSS Modules
 Redux (with asyncThunk)
 Unsplash API
 
 ##Setup and Installation
+
 For running project in local environment follow the following code .
-```npm init 
+```
+npm init 
 npm run dev 
 ```
 
@@ -23,11 +27,13 @@ npm run dev
 
 ##Responsiveness
 My-Media is completely phn responsive and fully functionality .
-##web view :![Screenshot from 2023-07-31 23-47-37](https://github.com/mukeshblackhat/myMedia/assets/59144700/4ae9e58f-53cb-4389-a938-b04d6b4dc5dd)
+##web view :
+![Screenshot from 2023-07-31 23-47-37](https://github.com/mukeshblackhat/myMedia/assets/59144700/4ae9e58f-53cb-4389-a938-b04d6b4dc5dd)
 
-##tab view : ![Screenshot from 2023-07-31 23-47-55](https://github.![Screenshot from 2023-07-31 23-48-16](https://github.com/mukeshblackhat/myMedia/assets/59144700/18135af1-2a7a-4974-9cac-72b549b0894f)
-com/mukeshblackhat/myMedia/assets/59144700/77753718-19af-4322-9cb5-738a1da838f1)
-
-##mobile view :
+##tab view : 
+![Screenshot from 2023-07-31 23-47-55](https://github.com/mukeshblackhat/myMedia/assets/59144700/4ef5ca0b-e96d-4a9b-953d-46abb8c9d7db)
 
 
+##mobile view:
+
+![Screenshot from 2023-07-31 23-48-16](https://github.com/mukeshblackhat/myMedia/assets/59144700/7454b0ac-df96-4bfa-ad9e-134330f6c3e4)

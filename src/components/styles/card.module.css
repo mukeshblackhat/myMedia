@@ -78,6 +78,16 @@
     display:flex;
     align-items: center;
   }
+  .likeHover{
+    margin-right: 0.5rem;
+    display:flex;
+    align-items: center;
+
+  }
+  .likeHover:hover{
+    color:rgb(207, 59, 59);
+  }
+
   .statItem img{
     margin-right: .5rem;
   }

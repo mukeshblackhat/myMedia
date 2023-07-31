@@ -23,7 +23,7 @@ const Card = (data) => {
           <div className={styles.statItem}>
             <img className={styles.icons} src={eye.src}/>
             {views}</div>
-          <div className={styles.statItem}>
+          <div className={  styles.likeHover}>
             <img className={styles.icons} src={heartBlank.src}/>
             {likes}</div>
           <div className={styles.statItem}>

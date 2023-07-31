@@ -2,13 +2,17 @@
   font-family: 'DMsans';
   src: url('../components/assets/DMSans.ttf');
 }
-@font-face {
+/* @font-face {
   font-family: 'handWritting';
   src: url('../components//assets/RetroSignature.otf');
-}
+} */
 @font-face {
   font-family: candyItalic;
   src: url('../components//assets/Candy\ talic.ttf');
+}
+@font-face {
+  font-family: handWritting;
+  src: url('../components/assets/AnsteryScript.otf');
 }
 body{
   font-family:DMsans;

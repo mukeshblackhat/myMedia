@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchUserPhotos } from '../../components/api/apiUtils';
 
@@ -26,13 +27,13 @@ const photoSlice = createSlice({
   initialState,
   reducers: {
     increasePage: (state) => {
-        state.page=state.page+1;
+        state.page+=1;
       },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserPhotosAsync.pending, (state) => {
-        // state.loading=true;
+        state.loading=true;
       })
       .addCase(fetchUserPhotosAsync.fulfilled, (state, action) => {
         state.loading=false;
@@ -45,3 +46,4 @@ const photoSlice = createSlice({
 
 export const { increasePage } = photoSlice.actions;
 export default photoSlice.reducer;
+

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import styles from "../styles/profile.module.css";
 import useScrollToBottom from "../hooks/useScrollToBottom";
 import { fetchUserData } from "../api/apiUtils";
@@ -15,7 +16,7 @@ const Profile = ({ params }) => {
   const loading = useSelector((state) => {
     return state.photo.loading;
   });
-  const pageNumber = useSelector((state) => {
+  const page = useSelector((state) => {
     return state.photo.page;
   });
   const photos = useSelector((state) => state.photo.photo);
@@ -24,10 +25,10 @@ const Profile = ({ params }) => {
   const { user } = params;
 
   useEffect(() => {
-    let page = pageNumber;
+   
     let username = user;
     dispatch(fetchUserPhotosAsync({ username, page }));
-    dispatch(increasePage);
+    dispatch(increasePage());
 
     const fetchData = async () => {
       try {
@@ -39,21 +40,22 @@ const Profile = ({ params }) => {
         setErrorData(true);
       }
     };
-
     fetchData();
   }, []);
 
   useEffect(() => {
-    let page = pageNumber;
+   
     let username = user;
-    dispatch(fetchUserPhotosAsync({ username, page }));
+    dispatch(fetchUserPhotosAsync({username,page }));
+    dispatch(increasePage());
+
   }, [isBottom]);
 
   {
     if (loading) {
       return (
         <>
-          <div>Loading</div>
+          <div className={styles.loading}>Loading....</div>
         </>
       );
     } else if (errorData) {
@@ -66,7 +68,9 @@ const Profile = ({ params }) => {
       return (
         <>
           <div className={styles.topBar}>
-            <div className={styles.navbarText}>MyMedia</div>
+            <Link className={styles.linkClass} href="/">
+            <div className={styles.navbarText}><span className="headFirst">My</span>Media</div>
+            </Link>
             {/* <div className={styles.lightModeText}>light mode</div> */}
           </div>
 

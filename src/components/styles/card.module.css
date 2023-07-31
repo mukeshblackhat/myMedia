@@ -2,58 +2,65 @@
 .card{
     display: flex;
     flex-direction: column;
-    padding:12px;
+    padding:1rem;
     border-radius: 5px;
     max-width: 28rem;
-    margin: 12px;
+    margin: 10px;
+    /* background-color: red; */
     box-shadow:0 1px 10px 0 rgb(98, 92, 92) ;
        
   }
+
   .topSection{
     display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
+    justify-content: start;
+    /* background-color: aqua; */
     align-items: center;
-    justify-content: center;
-    box-shadow: 1px 1px 1px 1px rgba(186, 184, 184, 0.736);
-    border-radius: 5px; 
-
-
+    /* border-radius:50%;  */
+    margin-top: .2rem;
   }
   .profileImage{
     border-radius: 50%;
+    /* width:fit-content; */
+    width:3rem;
+    height: 3rem;
+    overflow: hidden;
+    /* box-shadow: 1px 1px 1px 1px gray; */
   }
   .linkClass{
     text-decoration: none;
   }
   .username{
     margin-left: 0.5rem;
-    font-weight: 600;
+    font-weight: 580;
     font-size: 2rem;
+    line-height: 2rem;
+    font-family: handWritting;
     color:rgb(57, 52, 52);
+    /* background-color: aquamarine; */
   }
+
+
+
+
   .imageWrapper{
-    width: fit-content;
+    /* width: fit-content; */
     display: flex;
+    /* box-shadow: 1px 1px 1px 1px rgba(186, 184, 184, 0.736); */
+    /* background: #000; */
+    /* display: flex; */
   }
   
   .image{
-    display:flex;
-    width:fit-content; 
-    padding: .8rem;
+     width:100%;
   }
   .imgClass{
-    min-height: 300px;
-    height: 100%;
-    max-height: 612px;
     width: 100%;
-    object-fit: cover;
-    margin: 12px 0;
-    
    }
- .image img{
-    overflow-clip-margin: content-box;
-    overflow: clip;
+
+  .image img{
+   overflow: clip;
+   overflow-clip-margin: content-box;
   }
   
   .bottomSection{
@@ -61,9 +68,15 @@
     justify-content: space-between;
     padding: 0.5rem;
   }
-  
+  .icons{
+
+   width:20px ;
+   height:20px;
+  }
   .statItem{
     margin-right: 0.5rem;
+    display:flex;
+    align-items: center;
   }
   .statItem img{
     margin-right: .5rem;
@@ -71,9 +84,10 @@
   
   .description{
     padding: 0.5rem;
-    margin: 0.5rem 0;
-    font-size: 0.875rem;
-    color: #4b5563;
+    /* margin: 0.5rem 0; */
+    font-size: 1.5rem;
+    /* color: #4b5563; */
+    font-family: handwritting;
   }
   
   .daysAgo{
@@ -81,8 +95,8 @@
   }
   
   @media only screen and (max-width: 768px){
-   .imgClass{ max-height: 380px;}
+   /* .imgClass{ max-height: 380px;} */
   }
   @media only screen and (max-width: 1024px){
-    .imgClass{max-height: 420px;}
+    /* .imgClass{max-height: 420px;} */
   }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const clientId = '2NM-VYGaTdxN94KhcNHnJNuEa-zT57ygPUV3UPiFtDY'; // Replace 'YOUR_CLIENT_ID_HERE' with your actual client ID
+const clientId = 'vLri467oKqcdPTCuVSXIURsuxLrXnDg_bfdGXDSE_zI'; // Replace 'YOUR_CLIENT_ID_HERE' with your actual client ID
 
 export const fetchRandomPhotos = async () => {
   try {

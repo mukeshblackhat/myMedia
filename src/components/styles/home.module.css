@@ -1,4 +1,16 @@
 
+.loader{
+  width:100%;
+  height:100%;
+  font-size: xx-large;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: handWritting;
+  margin: auto;
+  margin-top: 5rem;
+}
+
 .flexContainer {
     display: flex;
     margin: auto;
@@ -15,8 +27,9 @@
     display:flex;
     border-radius: 5px;
     flex-direction: column;
-    border: 2px solid #757171;
+    /* border: 2px solid #757171; */
     padding: 01rem;
+    box-shadow: 0px 1px 10px 1px rgba(163, 161, 161, 0.735);
     /* height: calc(100vh - 5rem); */
     height:fit-content;
     margin:1rem;
@@ -45,10 +58,16 @@
     font-weight: bold;
     margin-left: 1rem;
   }
-  
+  .linkClass{
+    text-decoration: none;
+    color:black;
+    font-size: .8rem;
+  }
+
   .emptyDiv {
     margin: 0.25rem;
   }
+
   @media only screen and (max-width: 768px){
     .rightColumn{
       display:none;

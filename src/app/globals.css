@@ -1,4 +1,21 @@
-
+@font-face {
+  font-family: 'DMsans';
+  src: url('../components/assets/DMSans.ttf');
+}
+@font-face {
+  font-family: 'handWritting';
+  src: url('../components//assets/RetroSignature.otf');
+}
+@font-face {
+  font-family: candyItalic;
+  src: url('../components//assets/Candy\ talic.ttf');
+}
+body{
+  font-family:DMsans;
+  background-color: #f6f6f6;
+  margin:0;
+  padding:0;
+}
 
 /* :root {
   --foreground-rgb: 0, 0, 0;

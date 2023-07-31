@@ -30,7 +30,7 @@ const Profile = ({ params }) => {
   useEffect(() => {
    
     let username = user;
-    dispatch(fetchUserPhotosAsync({ username, page }));
+    dispatch(fetchUserPhotosAsync({ username, page, initial:true }));
     dispatch(increasePage());
 
     const fetchData = async () => {

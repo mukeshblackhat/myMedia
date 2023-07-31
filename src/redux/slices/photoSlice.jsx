@@ -13,10 +13,10 @@ const initialState = {
 
 export const fetchUserPhotosAsync = createAsyncThunk(
   'photo/fetchUserPhotos',
-  async ({ username, page }) => {
+  async ({ username, page, initial=false }) => {
     try {
       const photos = await fetchUserPhotos(username, page);
-      return photos;
+        return {photos, initial};
     } catch (error) {
         console.log(error, "error in thunk")
       throw error;
@@ -30,6 +30,7 @@ const photoSlice = createSlice({
   reducers: {
     increasePage: (state) => {
         state.page=state.page+1;
+
       },
   },
   extraReducers: (builder) => {
@@ -41,7 +42,7 @@ const photoSlice = createSlice({
       .addCase(fetchUserPhotosAsync.fulfilled, (state, action) => {
         state.loading=false;
         state.loader=false;
-        state.photo = [...state.photo, ...action.payload];
+        state.photo = action.payload.initial ? [ ...action.payload.photos] : [...state.photo, ...action.payload.photos];
       })
       .addCase(fetchUserPhotosAsync.rejected, (state, action) => {
         state.loading=false;

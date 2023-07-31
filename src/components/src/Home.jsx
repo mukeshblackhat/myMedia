@@ -10,7 +10,10 @@ const Home = () => {
   const [data, setData] = useState(null);
   const [userData,setUserData] = useState(null);
   const [loader, setLoader] = useState(true);
+  const [loading,setLoading]=useState(false);
   const isBottom = useScrollToBottom();
+  const [error,setError]=useState(false)
+  const [errorMsg,setErrorMsg]=useState("");
 
   useEffect(()=>{
     const  extractUsers=(array) => array?.map((item) => item.user);
@@ -26,6 +29,9 @@ const Home = () => {
         setData(response);
         setLoader(false);
       } catch (error) {
+        setError(true)
+        setErrorMsg(error.response.data)
+        console.log(error.response.data)
         setLoader(false);
       }
     };
@@ -37,11 +43,12 @@ const Home = () => {
     const fetchDataOnScroll = async () => {
       if (isBottom) {
         try {
+          setLoading(true);
           const response = await fetchRandomPhotos();
           setData((prevData) => [...prevData, ...response]);
-          setLoader(false);
+          setLoading(false);
         } catch (error) {
-          setLoader(false);
+          setLoading(false);
         }
       }
     };
@@ -53,7 +60,13 @@ if(loader){
     <div className={styles.loader}> MyMedia Loading ....</div>
     </>
   )
-}else {
+}else if(error){
+return(
+  <div className={styles.loader}>OOPs Sorry ! {errorMsg}</div>
+)
+}
+
+else {
 
   return (
     <>
@@ -80,6 +93,7 @@ if(loader){
             </div>
           );
         })}
+       {loading && <div className={styles.loader}>loading more data ....</div>}
       </div>
     </div>
   </>

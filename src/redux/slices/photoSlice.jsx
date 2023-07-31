@@ -5,6 +5,9 @@ import { fetchUserPhotos } from '../../components/api/apiUtils';
 const initialState = { 
     photo: [],
     loading:true,
+    loader:false,
+    error:false,
+    errorMsg:'',
     page:1,
  };
 
@@ -33,12 +36,16 @@ const photoSlice = createSlice({
     builder
       .addCase(fetchUserPhotosAsync.pending, (state) => {
         // state.loading=true;
+        state.loader=true;
       })
       .addCase(fetchUserPhotosAsync.fulfilled, (state, action) => {
         state.loading=false;
+        state.loader=false;
         state.photo = [...state.photo, ...action.payload];
       })
       .addCase(fetchUserPhotosAsync.rejected, (state, action) => {
+        state.loading=false;
+        state.loader=false;
       });
   },
 });

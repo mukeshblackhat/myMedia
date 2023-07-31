@@ -19,6 +19,9 @@ const Profile = ({ params }) => {
   const page = useSelector((state) => {
     return state.photo.page;
   });
+  const loader=useSelector((state) => {
+    return state.photo.loader;
+  })
   const photos = useSelector((state) => state.photo.photo);
   const [errorData, setErrorData] = useState(false);
   const dispatch = useDispatch();
@@ -61,7 +64,7 @@ const Profile = ({ params }) => {
     } else if (errorData) {
       return (
         <>
-          <div>Api Limit Reached try after some time ......</div>
+          <div className={styles.loading}>Api Limit Reached try after some time ......</div>
         </>
       );
     } else {
@@ -139,6 +142,7 @@ const Profile = ({ params }) => {
                   );
                 })}
               </div>
+              {loader&&<div className={styles.loading}>loading....</div>}
             </div>
           </div>
         </>

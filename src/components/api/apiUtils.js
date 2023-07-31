@@ -4,7 +4,6 @@ const clientId = process.env.NEXT_PUBLIC_CLIENTID; // Replace 'YOUR_CLIENT_ID_HE
 
 export const fetchRandomPhotos = async () => {
   try {
-    console.log(clientId)
     const response = await axios.get(`https://api.unsplash.com/photos/random?client_id=${clientId}&count=10`);
     return response.data;
   } catch (error) {
